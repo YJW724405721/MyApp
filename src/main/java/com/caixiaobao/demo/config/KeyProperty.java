@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Data
 public class KeyProperty {
     private String privateKey;
-    private String privateKey1;
 
     private String publicKey;
 
