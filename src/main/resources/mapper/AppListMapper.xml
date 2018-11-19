@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.caixiaobao.demo.dao.AppListMapper">
+
+    <insert id="InsertAppList" parameterType="java.util.List">
+        <foreach collection="list" index="index" item="item" separator=";">
+            insert into AppList VALUES (#{item.appName},#{item.appPkg},#{item.phoneId},#{item.deviceId})
+        </foreach>
+    </insert>
+    <select id="getAppListBy" parameterType="com.caixiaobao.demo.vo.AppList" resultType="com.caixiaobao.demo.vo.AppList">
+        SELECT * FROM AppList where phoneId =#{phoneId} and deviceId =#{deviceId}
+    </select>
+
+
+</mapper>
